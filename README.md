@@ -2,17 +2,21 @@
 # Hybrid-Panoptic
 ## PROJECT DESCRIPTION
 
-## HOW TO INSTALL
-### ODISE 
+
+## ODISE 
+### HOW TO INSTALL
 ```bash
 conda create -n odise python=3.9
 conda activate odise
 pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
 pip install git+https://@github.com/NVlabs/ODISE.gitcd ODISE 
 ```
-### Download model 
 ### Test ODISE
-### ClosedInstanceSegmentation (CIS)
+```bash
+wget https://github.com/NVlabs/ODISE/releases/download/v1.0.0/odise_label_coco_50e-b67d2efc.pth
+```
+## ClosedInstanceSegmentation (CIS)
+### HOW TO INSTALL
 ```bash
 conda create --name openmmlab python=3.8 -y
 conda activate openmmlab
@@ -23,13 +27,14 @@ mim install "mmcv>=2.0.0"
 git clone https://github.com/open-mmlab/mmdetection.git
 mim install mmdet
 ```
-### Download model
-https://github.com/NVlabs/ODISE/releases/download/v1.0.0/odise_label_coco_50e-b67d2efc.pth
 ### Test CIS
 
-### Heuristic
+## Heuristic
+### HOW TO INSTALL
+```bash
+mkdir ~/HybridPan
 git clone https://github.com/jawadhaidar/Hybrid-Panoptic.git
-
+```
 ## INFERENCE 
 ```bash
 cd ~/HybridPan
