@@ -1,7 +1,6 @@
 # Hybrid-Panoptic
 # Hybrid-Panoptic
 ## PROJECT DESCRIPTION
-<img width="289" alt="HYBRIDPAN" src="https://github.com/jawadhaidar/Hybrid-Panoptic/assets/74460048/04586222-c351-4b24-89f2-b6f1765d1474">
 
 ## HOW TO INSTALL
 ### ODISE 
@@ -22,6 +21,15 @@ mim install "mmcv>=2.0.0"
 git clone https://github.com/open-mmlab/mmdetection.git
 mim install mmdet
 ```
+## Heuristic
+git clone 
 
 ## INFERENCE 
+```bash
+cd ~/
+```
+## command based
+## docker based
 ## TRAIN
+### preprare dataset
+### train
