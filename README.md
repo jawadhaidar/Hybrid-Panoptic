@@ -13,6 +13,7 @@ pip install git+https://@github.com/NVlabs/ODISE.gitcd ODISE
 ```
 ### Test ODISE
 ```bash
+cd ~/
 wget https://github.com/NVlabs/ODISE/releases/download/v1.0.0/odise_label_coco_50e-b67d2efc.pth
 ```
 ## ClosedInstanceSegmentation (CIS)
@@ -26,9 +27,18 @@ mim install mmengine
 mim install "mmcv>=2.0.0"
 git clone https://github.com/open-mmlab/mmdetection.git
 mim install mmdet
+cd ~/mmdetection
+#download base model
+wget https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_64x4d_fpn_mstrain-poly_3x_coco/mask_rcnn_x101_64x4d_fpn_mstrain-poly_3x_coco_20210526_120447-c376f129.pth 
 ```
-### Test CIS
 
+### Test CIS
+```bash
+cd ~/mmdetection
+#create folder for configs
+mkdir myconfigs
+
+```
 ## Heuristic
 ### HOW TO INSTALL
 ```bash
