@@ -7,6 +7,7 @@ import re
 import argparse
 import torch
 from mmdet.registry import VISUALIZERS
+import os 
 
 # Create argument parser
 parser = argparse.ArgumentParser(description='Process an image.')
@@ -18,16 +19,17 @@ args = parser.parse_args()
 path=args.image_path
 
 #load
-config_file = '/home/aub/mmdetection/detectrs/idealworks_training.py'
-checkpoint_file = '/home/aub/mmdetection/work_dirs/idealworks_training_with_5000neg/epoch_5.pth'
+home=os.path.expanduser("~/")
+config_file = home + 'HybridPan/configs/idealconfig.py'
+checkpoint_file =  home + 'HybridPan/models/epoch_5.pth'
 # checkpoint_file = '/home/aub/mmdetection/work_dirs/idealworks_training_no_neg/epoch_30.pth'
 
 model = init_detector(config_file, checkpoint_file, device='cuda')  # or device='cuda:0'
 
 result=inference_detector(model, path)
-torch.save(result.pred_instances.masks,"/home/aub/mmdetection/detectrs/closed_masks.pt")
-torch.save(result.pred_instances.scores,"/home/aub/mmdetection/detectrs/closed_scores.pt")
-torch.save(result.pred_instances.labels,"/home/aub/mmdetection/detectrs/closed_labels.pt")
+torch.save(result.pred_instances.masks, home + "HybridPan/TempSave/closed_masks.pt")
+torch.save(result.pred_instances.scores, home + "HybridPan/TempSave/closed_scores.pt")
+torch.save(result.pred_instances.labels, home + "HybridPan/TempSave/closed_labels.pt")
 
 visualizer = VISUALIZERS.build(model.cfg.visualizer)
 visualizer.dataset_meta = model.dataset_meta
