@@ -9,12 +9,16 @@
 conda create -n odise python=3.9
 conda activate odise
 pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
-pip install git+https://@github.com/NVlabs/ODISE.gitcd ODISE 
+pip install git+https://@github.com/NVlabs/ODISE.gitcd ODISE
+cd ~/ODISE
+wget https://github.com/NVlabs/ODISE/releases/download/v1.0.0/odise_label_coco_50e-b67d2efc.pth
+
 ```
 ### Test ODISE
 ```bash
-cd ~/
-wget https://github.com/NVlabs/ODISE/releases/download/v1.0.0/odise_label_coco_50e-b67d2efc.pth
+conda activate odise
+cd ~/ODISE
+python demo/demo.py --input demo/examples/coco.jpg --output demo/coco_pred.jpg 
 ```
 ## ClosedInstanceSegmentation (CIS)
 ### HOW TO INSTALL
