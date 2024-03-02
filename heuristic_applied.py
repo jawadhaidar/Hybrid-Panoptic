@@ -13,13 +13,13 @@ args = parser.parse_args()
 path=args.image_path
 #get needed variables
 home= os.path.expanduser("~/")
-panoptic_results=torch.load(home + "/HybridPan/TempSave/odise_prediction.pt")
+panoptic_results=torch.load(home + "HybridPan/TempSave/odise_prediction.pt")
 panoptic_masks=panoptic_results[0].cpu()
 pred_pan_cls=panoptic_results[1] #dict
 # print(pred_pan_cls)
-maskrcnn_masks=torch.load( home + "/HybridPan/TempSave/closed_masks.pt").cpu()
-pred_maskrcnn_cls=torch.load(home + "/HybridPan/TempSave/closed_labels.pt").cpu()
-maskrcnn_scores=torch.load(home + "/HybridPan/TempSave/closed_scores.pt").cpu()
+maskrcnn_masks=torch.load( home + "HybridPan/TempSave/closed_masks.pt").cpu()
+pred_maskrcnn_cls=torch.load(home + "HybridPan/TempSave/closed_labels.pt").cpu()
+maskrcnn_scores=torch.load(home + "HybridPan/TempSave/closed_scores.pt").cpu()
 # print(maskrcnn_scores)
 # print(pred_maskrcnn_cls)
 h=HeuristicMimic()

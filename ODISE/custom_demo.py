@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import cv2 as cv
 import argparse
 import json
+import os 
 
 def inference(image, vocab, label_list):
 
@@ -37,7 +38,7 @@ if  __name__=="__main__":
     
     #load model
     home=os.path.expanduser("~/") #this assumes you cloned odise at home path
-    cfg = model_zoo.get_config(home+"/ODISE/configs/Panoptic/odise_label_coco_50e.py", trained=True)
+    cfg = model_zoo.get_config("Panoptic/odise_label_coco_50e.py", trained=True) # home+"ODISE/configs/Panoptic/odise_label_coco_50e.py"
 
     cfg.model.overlap_threshold = 0
     seed_all_rng(42)
@@ -65,7 +66,7 @@ if  __name__=="__main__":
     predictions,result_img=inference(input_image, vocab, label_list)
     # print(predictions)
     #save prediction
-    torch.save(predictions['panoptic_seg'], home + '/HybridPan/TempSave/odise_prediction.pt')
+    torch.save(predictions['panoptic_seg'], home + 'HybridPan/TempSave/odise_prediction.pt')
     
     # plt.imshow(predictions['panoptic_seg'][0].cpu(),cmap=plt.get_cmap('tab20')) #'tab20''gist_rainbow'
     # plt.show()
