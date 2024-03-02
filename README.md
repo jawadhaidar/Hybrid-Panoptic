@@ -10,6 +10,7 @@ On the other hand, Closed Vocab methods excel in achieving high accuracy across 
 
 ### Results
 
+<img width="568" alt="result" src="https://github.com/jawadhaidar/Hybrid-Panoptic/assets/74460048/1409bd02-a460-4ccc-99b3-5d4ad3638a4f">
 
 ## ODISE 
 ### HOW TO INSTALL
