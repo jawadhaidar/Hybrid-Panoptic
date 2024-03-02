@@ -32,7 +32,7 @@ git clone https://github.com/open-mmlab/mmdetection.git
 mim install mmdet
 cd ~/mmdetection
 #download base model
-wget https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_64x4d_fpn_mstrain-poly_3x_coco/mask_rcnn_x101_64x4d_fpn_mstrain-poly_3x_coco_20210526_120447-c376f129.pth 
+wget https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_64x4d_fpn_mstrain-poly_3x_coco/mask_rcnn_x101_64x4d_fpn_mstrain-poly_3x_coco_20210526_120447-c376f129.pth
 ```
 
 ### Test CIS
@@ -55,12 +55,16 @@ mkdir ~/HybridPan
 git clone https://github.com/jawadhaidar/Hybrid-Panoptic.git
 ```
 ## INFERENCE 
+## command based
 ```bash
+#download finetuned model
+cd ~/HybridPan/models
+wget --content-disposition "https://drive.usercontent.google.com/download?id=1HW-V50SboP0kEsTh6c3h3g8bGffjBifL&export=download&confirm=t&uuid=368ec624-1afc-4d8c-b6af-dc8e96b3f070"
 cd ~/HybridPan
 bash multi_runner.sh
 ```
-## command based
 ## docker based
+
 ## TRAIN
 ### preprare dataset
 ### Configuration
