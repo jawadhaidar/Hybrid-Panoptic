@@ -3,7 +3,7 @@
 # Activate the first conda environment
 source activate odise1
 # # Run the script for the first model
-image_path="/home/aub/ODISE/demo/examples/ideal1.png" #806
+image_path="/home/aub/HybridPan/rgb_0000.png" #806
 # cd /home/aub/ODISE
 python /home/aub/codes/HybridPan/ODISE/custom_demo.py --image_path $image_path
 # # Deactivate the first conda environment
