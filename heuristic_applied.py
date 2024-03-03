@@ -26,11 +26,11 @@ h=HeuristicMimic()
 
 replaced_panoptic_masks, new_cls = h.replace_masks(panoptic_masks,pred_pan_cls, maskrcnn_masks,pred_maskrcnn_cls,maskrcnn_scores)
 
-print(replaced_panoptic_masks.shape)
-print(type(replaced_panoptic_masks))
-print(new_cls)
-plt.imshow(panoptic_masks,cmap=plt.get_cmap('tab20')) #'tab20''gist_rainbow'
-plt.show()
+# print(replaced_panoptic_masks.shape)
+# print(type(replaced_panoptic_masks))
+# print(new_cls)
+# plt.imshow(panoptic_masks,cmap=plt.get_cmap('tab20')) #'tab20''gist_rainbow'
+# plt.show()
 # v=VisualizePan()
 # v.visualize_mask(replaced_panoptic_masks,new_cls)
 image = Image.open(path)

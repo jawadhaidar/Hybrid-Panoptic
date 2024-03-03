@@ -1,12 +1,11 @@
 # The new config inherits a base config to highlight the necessary modification
 import os 
-home=os.path.expanduser("~/")
 
 _base_ = [
-   home + 'mmdetection/configs/common/ms-poly_3x_coco-instance.py',
-   home + 'mmdetection/configs/_base_/models/mask-rcnn_r50_fpn.py'
+   os.path.expanduser("~/")+ 'mmdetection/configs/common/ms-poly_3x_coco-instance.py',
+  os.path.expanduser("~/")+ 'mmdetection/configs/_base_/models/mask-rcnn_r50_fpn.py'
 ]
-data_root = home + 'mmdetection/data_ideal/idealworks' #change will not affect inference
+data_root = os.path.expanduser("~/") + 'mmdetection/data_ideal/idealworks' #change will not affect inference
 
 # Use the needed backbone for Mask-RCNN
 # We also need to change the num_classes in head to match the dataset's annotation
@@ -107,4 +106,4 @@ default_hooks = dict(logger=dict(interval=100))
 
 # We can use the pre-trained Mask RCNN model to obtain higher performance
 # load_from = '/home/aub/mmdetection/work_dirs/idealworks_training_dolly_e6/epoch_6.pth'
-load_from = home + 'mmdetection/mask_rcnn_x101_64x4d_fpn_mstrain-poly_3x_coco_20210526_120447-c376f129.pth' #change will not affect inference
+load_from = os.path.expanduser("~/") + 'mmdetection/mask_rcnn_x101_64x4d_fpn_mstrain-poly_3x_coco_20210526_120447-c376f129.pth' #change will not affect inference

@@ -21,7 +21,7 @@ path=args.image_path
 #load
 home=os.path.expanduser("~/")
 config_file = home + 'HybridPan/configs/idealconfig.py'
-checkpoint_file =  home + 'HybridPan/models/epoch_5.pth'
+checkpoint_file = home + 'HybridPan/models/epoch_5.pth'
 # checkpoint_file = '/home/aub/mmdetection/work_dirs/idealworks_training_no_neg/epoch_30.pth'
 
 model = init_detector(config_file, checkpoint_file, device='cuda')  # or device='cuda:0'
