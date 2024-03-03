@@ -63,6 +63,7 @@ if  __name__=="__main__":
     vocab = "racks;palletracks;boxes;boxespallet;pallet;railing;iwhub;dolly;stillage;forklift;charger;iw;forklift_with_forks;forkliftforklift_with_forks;forklift_with_forksforks;mark turntable"
 
     label_list = ["COCO", "ADE", "LVIS"]
+    
     predictions,result_img=inference(input_image, vocab, label_list)
     # print(predictions)
     #save prediction
