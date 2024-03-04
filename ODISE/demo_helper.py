@@ -171,3 +171,21 @@ def build_demo_classes_and_metadata(vocab, label_list):
 
     return demo_classes, demo_metadata
 
+def inference(image, vocab, label_list):
+
+    demo_classes, demo_metadata = build_demo_classes_and_metadata(vocab, label_list)
+    with ExitStack() as stack:
+        inference_model = OpenPanopticInference(
+            model=model,
+            labels=demo_classes,
+            metadata=demo_metadata,
+            semantic_on=False, #was False
+            instance_on=False,#was False
+            panoptic_on=True,
+        )
+        stack.enter_context(inference_context(inference_model))
+        stack.enter_context(torch.no_grad())
+
+        demo = VisualizationDemo(inference_model, demo_metadata, aug)
+        predictions, visualized_output = demo.run_on_image(np.array(image))
+        return predictions,Image.fromarray(visualized_output.get_image())

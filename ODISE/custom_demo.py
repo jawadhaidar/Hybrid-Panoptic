@@ -4,6 +4,7 @@ import cv2 as cv
 import argparse
 import json
 import os 
+from load_save_odise import*
 
 def inference(image, vocab, label_list):
 
@@ -25,7 +26,7 @@ def inference(image, vocab, label_list):
         return predictions,Image.fromarray(visualized_output.get_image())
 
 if  __name__=="__main__":
-
+    
     # Create argument parser
     parser = argparse.ArgumentParser(description='Process an image.')
     # Add argument for the image path
@@ -38,27 +39,13 @@ if  __name__=="__main__":
     
     #load model
     home=os.path.expanduser("~/") #this assumes you cloned odise at home path
-    cfg = model_zoo.get_config("Panoptic/odise_label_coco_50e.py", trained=True) # home+"ODISE/configs/Panoptic/odise_label_coco_50e.py"
-
-    cfg.model.overlap_threshold = 0
-    seed_all_rng(42)
-
-    dataset_cfg = cfg.dataloader.test
-    wrapper_cfg = cfg.dataloader.wrapper
-
-    aug = instantiate(dataset_cfg.mapper).augmentations
-
-    model = instantiate_odise(cfg.model)
-    model.to(cfg.train.device)
-    ODISECheckpointer(model).load(cfg.train.init_checkpoint)
-    # print("finished loading model")
-
+    # model=torch.load("/home/aub/Downloads/odise_label_coco_50e-b67d2efc.pth") #home + 'HybridPan/TempSave/modelodise.pth')
+   
     #get image
     # requests.get("http://images.cocodataset.org/val2017/000000467848.jpg"
     # input_image = Image.open(requests.get("http://images.cocodataset.org/val2017/000000467848.jpg", stream=True).raw)
-
     input_image = Image.open(path)
-
+    print(f'img path {path}')
     #Add additional classes 
     vocab = "racks;palletracks;boxes;boxespallet;pallet;railing;iwhub;dolly;stillage;forklift;charger;iw;forklift_with_forks;forkliftforklift_with_forks;forklift_with_forksforks;mark turntable"
 
@@ -71,6 +58,6 @@ if  __name__=="__main__":
     
     # plt.imshow(predictions['panoptic_seg'][0].cpu(),cmap=plt.get_cmap('tab20')) #'tab20''gist_rainbow'
     # plt.show()
-    plt.imshow(result_img)
-    plt.axis('off')  # Turn off axis labels
-    plt.show()
+    # plt.imshow(result_img)
+    # plt.axis('off')  # Turn off axis labels
+    # plt.show()

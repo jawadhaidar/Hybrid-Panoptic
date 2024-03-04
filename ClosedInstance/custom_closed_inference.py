@@ -34,13 +34,13 @@ torch.save(result.pred_instances.labels, home + "HybridPan/TempSave/closed_label
 visualizer = VISUALIZERS.build(model.cfg.visualizer)
 visualizer.dataset_meta = model.dataset_meta
 
-img = mmcv.imread(path)
-visualizer.add_datasample(
-    'result',
-    img,
-    data_sample=result,
-    draw_gt=False,
-    show=True
-)
+# img = mmcv.imread(path)
+# visualizer.add_datasample(
+#     'result',
+#     img,
+#     data_sample=result,
+#     draw_gt=False,
+#     show=True
+# )
 
-print(result)
+# print(result)
