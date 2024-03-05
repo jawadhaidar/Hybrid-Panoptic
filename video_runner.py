@@ -1,6 +1,6 @@
 import cv2
 from PIL import Image
-from ODISE.demo_helper import*
+from demo_helper import*
 import matplotlib.pyplot as plt
 import cv2 as cv
 import argparse
@@ -33,6 +33,15 @@ def inference(image, vocab, label_list):
         predictions, visualized_output = demo.run_on_image(np.array(image))
         return predictions,Image.fromarray(visualized_output.get_image())
     
+# Create argument parser
+parser = argparse.ArgumentParser(description='Process an image.')
+# Add argument for the video path
+parser.add_argument('--video_path', type=str, help='Path to the input video')
+# Parse the arguments
+args = parser.parse_args()
+# Call the main function with the provided image path
+path=args.video_path
+
 #import odise models
 cfg = model_zoo.get_config("Panoptic/odise_label_coco_50e.py", trained=True) # home+"ODISE/configs/Panoptic/odise_label_coco_50e.py"
 
@@ -61,7 +70,7 @@ modelclosed = init_detector(config_file, checkpoint_file, device='cuda')  # or d
 #change each frame to PIL
 
 # Open the video file
-cap = cv2.VideoCapture("/home/aub/ficosadatasetvideos/2_video/video.mp4")
+cap = cv2.VideoCapture(path)
 
 frames = []
 counter=0
@@ -108,21 +117,22 @@ while cap.isOpened():
     # print("path print")
     # print(os.path.join(home+"HybridPan/outputs",f"{input_image_name}"))
 
-    # vis_output.save(os.path.join(home+"HybridPan/outputs",f"{input_image_name}"))
+    vis_output.save(os.path.join(home+"HybridPan/outputs/",f"frame{counter:04d}.jpg"))
 
     # vis_output.save("/home/aub/HybridPan/outputs/"+f"{input_image_name}")
 
-    # cv2.imwrite(os.path.join(home+"HybridPan/outputs",f"{input_image_name}"), vis_output)
+    # cv2.imwrite(os.path.join(home+"HybridPan/outputs",f"{counter}"), vis_output)
+    counter+=1
 
 
     #plot
-    plt.imshow(vis_output) #'tab20''gist_rainbow'
-    plt.show()
+    # plt.imshow(vis_output) #'tab20''gist_rainbow'
+    # plt.show()
 
 
 
-
-    
+#change to video
+# images_to_video(home+"HybridPan/outputs", home+"HybridPan/outputs", fps=25)
 
 
 #apply heuristic 

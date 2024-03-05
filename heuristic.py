@@ -1,5 +1,5 @@
 import numpy as np
-from ODISE.demo_helper import*
+from demo_helper import*
 import torch
 
 class Heuristic:

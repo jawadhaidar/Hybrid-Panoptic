@@ -23,6 +23,8 @@ from odise.checkpoint import ODISECheckpointer
 from odise.config import instantiate_odise
 from odise.data import get_openseg_labels
 from odise.modeling.wrapper import OpenPanopticInference
+import cv2
+import os
 
 setup_logger()
 logger = setup_logger(name="odise")
@@ -170,3 +172,34 @@ def build_demo_classes_and_metadata(vocab, label_list):
     demo_classes = demo_thing_classes + demo_stuff_classes
 
     return demo_classes, demo_metadata
+
+#change image list to video
+def images_to_video(image_folder, video_path, fps=25):
+    # Get the list of image files in the folder
+    image_files = [os.path.join(image_folder, f) for f in os.listdir(image_folder) if f.endswith(('.png', '.jpg', '.jpeg'))]
+    image_files.sort()  # Sort the files numerically
+    
+    if not image_files:
+        print("No image files found in the folder.")
+        return
+    
+    # Read the first image to get dimensions
+    first_image = cv2.imread(image_files[0])
+    height, width, _ = first_image.shape
+    
+    # Define the codec and create VideoWriter object
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # You can also use other codecs like 'XVID', 'MJPG', etc.
+    out = cv2.VideoWriter(video_path, fourcc, fps, (width, height))
+    
+    # Iterate through the image files and write them to the video
+    for image_file in image_files:
+        image = cv2.imread(image_file)
+        out.write(image)
+    
+    # Release the VideoWriter object
+    out.release()
+    
+    print(f"Video created successfully at {video_path}")
+
+
+# images_to_video("/home/aub/HybridPan/outputs", "/home/aub/HybridPan/outputs", fps=25)
