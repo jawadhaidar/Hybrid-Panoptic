@@ -74,7 +74,7 @@ cd ~/HybridPan
 #run on image
 python image_runner.py --image_path /home/examplepath.jpg
 ```
-``bash
+```bash
 #run on video
 python image_runner.py --video_path /home/examplepath.mp4
 ```
