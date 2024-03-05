@@ -7,23 +7,22 @@ Open-vocab panoptic segmentation techniques often face the challenge of signific
 On the other hand, Closed Vocab methods excel in achieving high accuracy across all annotated classes. However, they are inherently limited to the initially annotated classes. Expanding the scope of such models by adding new classes typically necessitates manual annotation, which can be labor-intensive and time-consuming.
 ### Pros of Hybrid-Panoptic
 ### Method Schematic
+<img width="700" alt="heuristic" src="https://github.com/jawadhaidar/Hybrid-Panoptic/assets/74460048/30e82e68-265a-4744-8207-3875cee0fbcd">
 
 ### Results
 
-<img width="568" alt="result" src="https://github.com/jawadhaidar/Hybrid-Panoptic/assets/74460048/1409bd02-a460-4ccc-99b3-5d4ad3638a4f">
+<img width="700" alt="result" src="https://github.com/jawadhaidar/Hybrid-Panoptic/assets/74460048/1409bd02-a460-4ccc-99b3-5d4ad3638a4f">
 
 ## ODISE 
 ### HOW TO INSTALL
 ```bash
-conda create -n odise python=3.9
-conda activate odise
+conda create -n combine python=3.9
+conda activate combine
 pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
 pip install git+https://@github.com/NVlabs/ODISE.git
 pip install pillow==9.5.0
 python -m pip uninstall numpy
 python -m pip install numpy==1.23.1
-
-
 
 ```
 ### Test ODISE
@@ -35,9 +34,7 @@ python demo/demo.py --input demo/examples/coco.jpg --output demo/coco_pred.jpg
 ## ClosedInstanceSegmentation (CIS)
 ### HOW TO INSTALL
 ```bash
-conda create --name openmmlab python=3.8 -y
-conda activate openmmlab
-conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=10.2 -c pytorch
+conda activate combine
 pip install -U openmim
 mim install mmengine
 mim install "mmcv>=2.0.0"
@@ -64,7 +61,7 @@ inference_detector(model, 'demo/demo.jpg')
 ## Heuristic
 ### HOW TO INSTALL
 ```bash
-git clone https://github.com/jawadhaidar/Hybrid-Panoptic.git
+git clone -b fast https://github.com/jawadhaidar/Hybrid-Panoptic.git
 ```
 ## INFERENCE 
 ## command based
@@ -73,8 +70,16 @@ git clone https://github.com/jawadhaidar/Hybrid-Panoptic.git
 cd ~/HybridPan/models
 wget --content-disposition "https://drive.usercontent.google.com/download?id=1HW-V50SboP0kEsTh6c3h3g8bGffjBifL&export=download&confirm=t&uuid=368ec624-1afc-4d8c-b6af-dc8e96b3f070"
 cd ~/HybridPan
-bash multi_runner.sh
 ```
+```bash
+#run on image
+python image_runner.py --image_path /home/examplepath.jpg
+```
+```bash
+#run on video
+python image_runner.py --video_path /home/examplepath.mp4
+```
+
 ## docker based
 
 ## TRAIN
