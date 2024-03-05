@@ -178,7 +178,6 @@ def images_to_video(image_folder, video_path, fps=25):
     # Get the list of image files in the folder
     image_files = [os.path.join(image_folder, f) for f in os.listdir(image_folder) if f.endswith(('.png', '.jpg', '.jpeg'))]
     image_files.sort()  # Sort the files numerically
-    
     if not image_files:
         print("No image files found in the folder.")
         return
@@ -186,7 +185,7 @@ def images_to_video(image_folder, video_path, fps=25):
     # Read the first image to get dimensions
     first_image = cv2.imread(image_files[0])
     height, width, _ = first_image.shape
-    
+    print(f'height, width {height, width}')
     # Define the codec and create VideoWriter object
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # You can also use other codecs like 'XVID', 'MJPG', etc.
     out = cv2.VideoWriter(video_path, fourcc, fps, (width, height))
@@ -202,4 +201,4 @@ def images_to_video(image_folder, video_path, fps=25):
     print(f"Video created successfully at {video_path}")
 
 
-# images_to_video("/home/aub/HybridPan/outputs", "/home/aub/HybridPan/outputs", fps=25)
+images_to_video("/home/aub/HybridPan/outputs", "/home/aub/HybridPan/out.mp4", fps=25)

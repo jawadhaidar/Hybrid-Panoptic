@@ -132,7 +132,7 @@ while cap.isOpened():
 
 
 #change to video
-# images_to_video(home+"HybridPan/outputs", home+"HybridPan/outputs", fps=25)
+images_to_video(home+"HybridPan/outputs", home+"HybridPan/outputs/out.mp4", fps=25)
 
 
 #apply heuristic 
