@@ -61,7 +61,7 @@ inference_detector(model, 'demo/demo.jpg')
 ## Heuristic
 ### HOW TO INSTALL
 ```bash
-git clone https://github.com/jawadhaidar/Hybrid-Panoptic.git
+git clone -b fast https://github.com/jawadhaidar/Hybrid-Panoptic.git
 ```
 ## INFERENCE 
 ## command based
