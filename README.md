@@ -3,7 +3,7 @@
 In this project, we propose a simple Hybrid panoptic method designed to cover a large number of classes (2000+) without compromising on accuracy.
 ### Cons of open-Vocab
 Open-vocab panoptic segmentation techniques often face the challenge of significantly increasing the number of classes. While this approach offers greater flexibility, it tends to achieve lower precision on novel classes. Moreover, continually adding new classes to such models can result in a computational burden, as it requires retraining these massive models (with over 1000M parameters).
-### Cones of Closed-Vocab
+### Cons of Closed-Vocab
 On the other hand, Closed Vocab methods excel in achieving high accuracy across all annotated classes. However, they are inherently limited to the initially annotated classes. Expanding the scope of such models by adding new classes typically necessitates manual annotation, which can be labor-intensive and time-consuming.
 ### Pros of Hybrid-Panoptic
 ### Method Schematic
