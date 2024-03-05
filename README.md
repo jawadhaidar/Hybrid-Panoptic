@@ -7,10 +7,11 @@ Open-vocab panoptic segmentation techniques often face the challenge of signific
 On the other hand, Closed Vocab methods excel in achieving high accuracy across all annotated classes. However, they are inherently limited to the initially annotated classes. Expanding the scope of such models by adding new classes typically necessitates manual annotation, which can be labor-intensive and time-consuming.
 ### Pros of Hybrid-Panoptic
 ### Method Schematic
+<img width="700" alt="heuristic" src="https://github.com/jawadhaidar/Hybrid-Panoptic/assets/74460048/30e82e68-265a-4744-8207-3875cee0fbcd">
 
 ### Results
 
-<img width="568" alt="result" src="https://github.com/jawadhaidar/Hybrid-Panoptic/assets/74460048/1409bd02-a460-4ccc-99b3-5d4ad3638a4f">
+<img width="700" alt="result" src="https://github.com/jawadhaidar/Hybrid-Panoptic/assets/74460048/1409bd02-a460-4ccc-99b3-5d4ad3638a4f">
 
 ## ODISE 
 ### HOW TO INSTALL
