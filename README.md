@@ -70,7 +70,7 @@ cd ~/HybridPan/models
 wget --content-disposition "https://drive.usercontent.google.com/download?id=1HW-V50SboP0kEsTh6c3h3g8bGffjBifL&export=download&confirm=t&uuid=368ec624-1afc-4d8c-b6af-dc8e96b3f070"
 cd ~/HybridPan
 ```
-``bash
+```bash
 #run on image
 python image_runner.py --image_path /home/examplepath.jpg
 ```
