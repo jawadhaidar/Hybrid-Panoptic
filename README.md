@@ -15,15 +15,13 @@ On the other hand, Closed Vocab methods excel in achieving high accuracy across 
 ## ODISE 
 ### HOW TO INSTALL
 ```bash
-conda create -n odise python=3.9
-conda activate odise
+conda create -n combine python=3.9
+conda activate combine
 pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
 pip install git+https://@github.com/NVlabs/ODISE.git
 pip install pillow==9.5.0
 python -m pip uninstall numpy
 python -m pip install numpy==1.23.1
-
-
 
 ```
 ### Test ODISE
@@ -35,9 +33,7 @@ python demo/demo.py --input demo/examples/coco.jpg --output demo/coco_pred.jpg
 ## ClosedInstanceSegmentation (CIS)
 ### HOW TO INSTALL
 ```bash
-conda create --name openmmlab python=3.8 -y
-conda activate openmmlab
-conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=10.2 -c pytorch
+conda activate combine
 pip install -U openmim
 mim install mmengine
 mim install "mmcv>=2.0.0"
