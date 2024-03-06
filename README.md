@@ -27,7 +27,7 @@ g++ & gcc >=12 or <=10
 #do a symbolic link for c++ if which c++ returns nothing
 sudo ln -s /usr/bin/g++ /usr/bin/c++
 #install deectron2 manually
-git clone https://github.com/NVlabs/ODISE.git
+python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 #comment line 86 in the following dir
 dir : ODISE/third_party/Mask2Former/setup.py
 #make empty folder
