@@ -23,16 +23,20 @@ conda install -c "nvidia/label/cuda-11.6.1" libcusolver-dev
 #ensure you have the following versions
 g++ & gcc >=12 or <=10
 #if not install using the following
-
 #do a symbolic link for c++ if which c++ returns nothing
 sudo ln -s /usr/bin/g++ /usr/bin/c++
-#install deectron2 manually
+#install dectron2 manually
 python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
+#get odise
+git clone https://github.com/NVlabs/ODISE.git
 #comment line 86 in the following dir
 dir : ODISE/third_party/Mask2Former/setup.py
 #make empty folder
 mkdir -p /home/jawad/ODISE/third_party/Mask2Former/build/temp.linux-x86_64-cpython-39/
 #build
+cd ~/ODISE
+pip install -e .
+
 pip install pillow==9.5.0
 python -m pip uninstall numpy
 python -m pip install numpy==1.23.1
