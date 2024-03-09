@@ -94,10 +94,25 @@ python image_runner.py --image_path /home/examplepath.jpg
 ```
 ```bash
 #run on video
-python image_runner.py --video_path /home/examplepath.mp4
+python video_runner.py --video_path /home/examplepath.mp4
 ```
 
-## docker based
+## Docker based
+#pull image
+```bash
+
+```
+#Run image
+```bash
+```
+#run on image
+```bash
+python image_runner.py --image_path /home/examplepath.jpg
+```
+#run on video
+```bash
+python video_runner.py --video_path /home/examplepath.mp4
+```
 
 ## TRAIN
 ### preprare dataset
