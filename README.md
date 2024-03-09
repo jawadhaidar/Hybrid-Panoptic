@@ -104,6 +104,7 @@ python video_runner.py --video_path /home/examplepath.mp4
 ```
 #Run image
 ```bash
+docker run --gpus all -it -v /home:/home forthimage
 ```
 #run on image
 ```bash
