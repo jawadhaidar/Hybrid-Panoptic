@@ -14,17 +14,21 @@ On the other hand, Closed Vocab methods excel in achieving high accuracy across 
 <img width="700" alt="result" src="https://github.com/jawadhaidar/Hybrid-Panoptic/assets/74460048/1409bd02-a460-4ccc-99b3-5d4ad3638a4f">
 
 ## ODISE 
+### system requiremets
+```bash
+#ensure you have the following versions
+g++ & gcc >=12 or <=10
+#if not install using the following
+#do a symbolic link for c++ if which c++ returns nothing
+sudo ln -s /usr/bin/g++ /usr/bin/c++
+```
+
 ### HOW TO INSTALL
 ```bash
 conda create -n combine python=3.9
 conda activate combine
 pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
 conda install -c "nvidia/label/cuda-11.6.1" libcusolver-dev
-#ensure you have the following versions
-g++ & gcc >=12 or <=10
-#if not install using the following
-#do a symbolic link for c++ if which c++ returns nothing
-sudo ln -s /usr/bin/g++ /usr/bin/c++
 #install dectron2 manually
 python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 #get odise
