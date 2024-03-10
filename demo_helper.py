@@ -200,5 +200,11 @@ def images_to_video(image_folder, video_path, fps=25):
     
     print(f"Video created successfully at {video_path}")
 
+def delete_images(image_folder):
+    # Get the list of image files in the folder
+    image_files = [os.path.join(image_folder, f) for f in os.listdir(image_folder) if f.endswith(('.png', '.jpg', '.jpeg'))]
+        # Delete each image file
+    for image_file in image_files:
+        os.remove(image_file)
 
-images_to_video("/home/aub/HybridPan/outputs", "/home/aub/HybridPan/out.mp4", fps=25)
+# images_to_video("/home/aub/HybridPan/outputs", "/home/aub/HybridPan/out.mp4", fps=25)

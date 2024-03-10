@@ -65,6 +65,9 @@ checkpoint_file = home + 'HybridPan/models/epoch_5.pth'
 # checkpoint_file = '/home/aub/mmdetection/work_dirs/idealworks_training_no_neg/epoch_30.pth'
 modelclosed = init_detector(config_file, checkpoint_file, device='cuda')  # or device='cuda:0'
 
+#delete old frames
+
+delete_images(home+"HybridPan/outputs")
 
 #read a video frame by frame 
 #change each frame to PIL
@@ -133,8 +136,5 @@ while cap.isOpened():
 
 #change to video
 images_to_video(home+"HybridPan/outputs", home+"HybridPan/outputs/out.mp4", fps=25)
+delete_images(home+"HybridPan/outputs")
 
-
-#apply heuristic 
-#visualize 
-#save 
