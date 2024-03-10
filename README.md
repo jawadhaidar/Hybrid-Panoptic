@@ -18,8 +18,7 @@ On the other hand, Closed Vocab methods excel in achieving high accuracy across 
 ```bash
 #ensure you have the following versions
 g++ & gcc >=12 or <=10
-#if not install using the following
-#do a symbolic link for c++ if which c++ returns nothing
+# if which c++ returns nothing, do a symbolic link for c++ as follows
 sudo ln -s /usr/bin/g++ /usr/bin/c++
 ```
 
