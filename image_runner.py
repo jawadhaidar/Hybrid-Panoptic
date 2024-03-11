@@ -37,6 +37,8 @@ def inference(image, vocab, label_list):
 parser = argparse.ArgumentParser(description='Process an image.')
 # Add argument for the video path
 parser.add_argument('--image_path', type=str, help='Path to the input image')
+parser.add_argument('--home_path', type=str, help='Path to the home dir, for docker should be /workspace/ ')
+
 # Parse the arguments
 args = parser.parse_args()
 # Call the main function with the provided image path
@@ -59,7 +61,7 @@ ODISECheckpointer(model).load(cfg.train.init_checkpoint)
 # print("finished loading model")
 
 #load closed model
-home=os.path.expanduser("~/")
+home=args.home_path#os.path.expanduser("~/")
 config_file = home + 'HybridPan/configs/idealconfig.py'
 checkpoint_file = home + 'HybridPan/models/epoch_5.pth'
 # checkpoint_file = '/home/aub/mmdetection/work_dirs/idealworks_training_no_neg/epoch_30.pth'
