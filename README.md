@@ -111,11 +111,11 @@ docker run --gpus all -it -v /home:/home forthimage
 ```
 #run on image
 ```bash
-python image_runner.py --image_path /home/examplepath.jpg
+python image_runner.py --image_path /home/examplepath.jpg --home_path /
 ```
 #run on video
 ```bash
-python video_runner.py --video_path /home/examplepath.mp4
+python video_runner.py --video_path /home/examplepath.mp4 --home_path /
 ```
 
 ## TRAIN
