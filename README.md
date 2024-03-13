@@ -35,7 +35,7 @@ git clone https://github.com/NVlabs/ODISE.git
 #comment line 86 in the following dir
 dir : ODISE/third_party/Mask2Former/setup.py
 #make empty folder
-mkdir -p /home/jawad/ODISE/third_party/Mask2Former/build/temp.linux-x86_64-cpython-39/
+mkdir -p ~/ODISE/third_party/Mask2Former/build/temp.linux-x86_64-cpython-39/
 #build
 cd ~/ODISE
 pip install -e .
@@ -87,17 +87,19 @@ git clone -b fast https://github.com/jawadhaidar/Hybrid-Panoptic.git HybridPan
 ## command based
 ```bash
 #download finetuned model
+cd ~/HybridPan
+mkdir models
 cd ~/HybridPan/models
 wget --content-disposition "https://drive.usercontent.google.com/download?id=1HW-V50SboP0kEsTh6c3h3g8bGffjBifL&export=download&confirm=t&uuid=368ec624-1afc-4d8c-b6af-dc8e96b3f070"
 cd ~/HybridPan
 ```
 ```bash
 #run on image
-python image_runner.py --image_path /home/examplepath.jpg
+python image_runner.py --image_path /home/examplepath.jpg --home_path your home path
 ```
 ```bash
 #run on video
-python video_runner.py --video_path /home/examplepath.mp4
+python video_runner.py --video_path /home/examplepath.mp4 --home_path your home path
 ```
 
 ## Docker based
