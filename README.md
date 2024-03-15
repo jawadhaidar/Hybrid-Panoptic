@@ -6,6 +6,7 @@ Open-vocab panoptic segmentation techniques often face the challenge of signific
 ### Cons of Closed-Vocab
 On the other hand, Closed Vocab methods excel in achieving high accuracy across all annotated classes. However, they are inherently limited to the initially annotated classes. Expanding the scope of such models by adding new classes typically necessitates manual annotation, which can be labor-intensive and time-consuming.
 ### Pros of Hybrid-Panoptic
+In industrial settings, the necessity to accurately segment distinct classes is common. Open-Vocab models often struggle with such unique classes, and as previously noted, retraining these extensive models to accommodate them is computationally taxing. Our approach capitalizes on the vast array of classes offered by Open-Vocab models and supplements them by incorporating unique classes through a heuristic process, leveraging closed instance models. 
 ### Method Schematic
 <img width="700" alt="heuristic" src="https://github.com/jawadhaidar/Hybrid-Panoptic/assets/74460048/30e82e68-265a-4744-8207-3875cee0fbcd">
 
