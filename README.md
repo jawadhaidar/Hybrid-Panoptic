@@ -109,15 +109,22 @@ docker pull jawadhaidar/hybridpan
 ```
 #Run image
 ```bash
-docker run --gpus all -it -v /home:/home forthimage
+docker run --gpus all -it -v /home:/home hybridpan
+cd /HybridPan
 ```
 #run on image
 ```bash
+# --home_path should be kept / as it is the home for docker image
 python image_runner.py --image_path /home/examplepath.jpg --home_path /
 ```
 #run on video
 ```bash
 python video_runner.py --video_path /home/examplepath.mp4 --home_path /
+```
+#Results
+The results are saved inside the /HybridPan/outputs. To copy them to your home directory
+```bash
+docker cp hybridpan:/HybridPan/outputs/example.jpg /path/on/host
 ```
 
 ## TRAIN
