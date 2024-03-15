@@ -122,8 +122,8 @@ python image_runner.py --image_path /home/examplepath.jpg --home_path /
 python video_runner.py --video_path /home/examplepath.mp4 --home_path /
 ```
 #Results
-The results are saved inside the /HybridPan/outputs. To copy them to your home directory
 ```bash
+#The results are saved inside the /HybridPan/outputs. To copy them to your home directory :
 docker cp hybridpan:/HybridPan/outputs/example.jpg /path/on/host
 ```
 
