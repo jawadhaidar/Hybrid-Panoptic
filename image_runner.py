@@ -13,6 +13,7 @@ from detectron2.utils.visualizer import ColorMode, Visualizer, random_color
 import argparse
 import os
 import cv2
+from detectron2.data import detection_utils as utils
 
 def inference(image, vocab, label_list):
 
@@ -67,7 +68,7 @@ checkpoint_file = home + 'HybridPan/models/epoch_5.pth'
 # checkpoint_file = '/home/aub/mmdetection/work_dirs/idealworks_training_no_neg/epoch_30.pth'
 modelclosed = init_detector(config_file, checkpoint_file, device='cuda')  # or device='cuda:0'
 
-input_image = Image.open(path)
+input_image = utils.read_image(path, format="RGB") #Image.open(path)
 #do odise infernece 
 
 vocab = "racks;palletracks;boxes;boxespallet;pallet;railing;iwhub;dolly;stillage;forklift;charger;iw;forklift_with_forks;forkliftforklift_with_forks;forklift_with_forksforks;mark turntable"
