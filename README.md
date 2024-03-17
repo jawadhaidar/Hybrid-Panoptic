@@ -106,7 +106,7 @@ python video_runner.py --video_path /home/examplepath.mp4 --home_path your home 
 ## Docker based
 #pull image
 ```bash
-docker pull jawadhaidar/hybridpan
+docker pull jawadaub/hybridpan
 ```
 #Run image
 ```bash
